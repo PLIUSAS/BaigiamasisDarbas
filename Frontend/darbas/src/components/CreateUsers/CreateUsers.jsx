@@ -1,0 +1,82 @@
+import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
+const endpoint = "http://localhost:3001/users";
+
+export default function CreateUsers() {
+  const navigate = useNavigate();
+  const [name, setName] = useState("");
+  const [surname, setSurname] = useState("");
+  const [email, setEmail] = useState("");
+  const [expirationDate, setExpirationDate] = useState("");
+  function handleSubmit(e) {
+    e.preventDefault();
+    axios
+      .post(endpoint, {
+        name,
+        surname,
+        email,
+        expirationDate,
+      })
+      .then(() => {
+        alert("Klientas sėkmingai registruotas");
+        navigate("/users");
+      })
+      .catch((error) => alert(error));
+    if (!name || !surname || !email || !expirationDate) {
+      alert("Užpildykite visus laukus");
+    }
+    if (name.length > 100 || surname.length > 100 || email.length > 100) {
+      alert("Vardas arba Pavardė arba El.pastas yra per ilgas !!");
+    }
+    if (name.length <= 1 || surname.length <= 1 || email.length <= 1) {
+      alert("Vardas ir Pavardė, bei El.pastas yra privalomas !!");
+    }
+  }
+  return (
+    <div>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="">Vardas</label> <br />
+        <input
+          type="text"
+          required
+          minLength={1}
+          maxLength={100}
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <br />
+        <label htmlFor="">Pavardė</label> <br />
+        <input
+          type="text"
+          required
+          minLength={1}
+          maxLength={100}
+          value={surname}
+          onChange={(e) => setSurname(e.target.value)}
+        />
+        <br />
+        <label htmlFor="">El.Pastas</label> <br />
+        <input
+          type="email"
+          required
+          minLength={1}
+          maxLength={100}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <br />
+        <label htmlFor="">Data</label> <br />
+        <input
+          type="datetime-local"
+          required
+          value={expirationDate}
+          onChange={(e) => setExpirationDate(e.target.value)}
+        />
+        <br />
+        <button type="submit">Registruoti Klijantą</button>
+      </form>
+    </div>
+  );
+}
