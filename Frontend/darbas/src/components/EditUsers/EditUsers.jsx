@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import style from "./EditUsers.module.css";
 
 const endpoint = "http://localhost:3001/users";
 

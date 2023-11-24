@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import style from "./CreateUsers.module.css";
 
 const endpoint = "http://localhost:3001/users";
 
@@ -39,6 +40,7 @@ export default function CreateUsers() {
       <form onSubmit={handleSubmit}>
         <label htmlFor="">Vardas</label> <br />
         <input
+          placeholder="Vardas"
           type="text"
           required
           minLength={1}
@@ -49,6 +51,7 @@ export default function CreateUsers() {
         <br />
         <label htmlFor="">Pavardė</label> <br />
         <input
+          placeholder="Pavardė"
           type="text"
           required
           minLength={1}
@@ -59,6 +62,7 @@ export default function CreateUsers() {
         <br />
         <label htmlFor="">El.Pastas</label> <br />
         <input
+          placeholder="Abcd@gmail.com"
           type="email"
           required
           minLength={1}
@@ -69,6 +73,9 @@ export default function CreateUsers() {
         <br />
         <label htmlFor="">Data</label> <br />
         <input
+          min="2023-11-01T08:00:"
+          max="2030-12-30T21:00"
+          placeholder="YYYY-MM-DD HH:MM"
           type="datetime-local"
           required
           value={expirationDate}

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Users from "../Users/Users";
 import axios from "axios";
+import style from "./UsersList.module.css";
 
 const endpoint = "http://localhost:3001/users";
 export default function UsersList() {

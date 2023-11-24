@@ -1,4 +1,4 @@
-import "./App.css";
+import style from "./App.module.css";
 import { Routes, Route } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import UsersList from "./components/UsersList/UsersList";
@@ -10,12 +10,17 @@ function App() {
 
   return (
     <div>
-      <button onClick={() => navigate("/users")}>
-        Užsiregistravusių Klijantų sąrašas
-      </button>
-      <button onClick={() => navigate("/users/register")}>
-        Registruoti Klijantą
-      </button>
+      <div className={style.Buttons}>
+        <button className={style.MainButton} onClick={() => navigate("/users")}>
+          Užsiregistravusių Klijantų sąrašas
+        </button>
+        <button
+          className={style.MainButton}
+          onClick={() => navigate("/users/register")}
+        >
+          Registruoti Klijantą
+        </button>
+      </div>
       <Routes>
         <Route path="/users" element={<UsersList />} />
         <Route path="/users/register" element={<CreateUsers />} />
