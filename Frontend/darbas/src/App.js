@@ -10,16 +10,23 @@ function App() {
 
   return (
     <div>
-      <div className={style.Buttons}>
-        <button className={style.MainButton} onClick={() => navigate("/users")}>
-          Užsiregistravusių Klijantų sąrašas
-        </button>
-        <button
-          className={style.MainButton}
-          onClick={() => navigate("/users/register")}
-        >
-          Registruoti Klijantą
-        </button>
+      <div className={style.ButtonMeniu}>
+        <div className={style.Buttons}>
+          <button
+            className={style.MainButton}
+            onClick={() => navigate("/users")}
+          >
+            Užsiregistravusių Klijantų sąrašas
+          </button>
+        </div>
+        <div className={style.Buttons1}>
+          <button
+            className={style.MainButton}
+            onClick={() => navigate("/users/register")}
+          >
+            Registruoti Klijantą
+          </button>
+        </div>
       </div>
       <Routes>
         <Route path="/users" element={<UsersList />} />

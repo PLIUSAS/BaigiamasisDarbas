@@ -3,13 +3,29 @@ body {
   padding: 0;
   display: block;
 }
-.Buttons {
+.ButtonMeniu {
+  background-image: url("Bacground.jpg");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  padding: 2rem;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  gap: 1rem;
+}
+.Buttons,
+.Buttons1 {
   background-image: url("https://cdn1.treatwell.net/images/view/v2.i5216780.w720.h480.x5EB4ACE3/");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
+  width: 500px;
+  height: 150px;
   padding: 2rem;
+  margin: 10rem;
   justify-content: center;
   align-items: center;
 }
