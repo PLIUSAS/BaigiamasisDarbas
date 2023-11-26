@@ -24,20 +24,39 @@ export default function EditUsers() {
       setExpirationDate(formattedDate);
     });
   }, [id]);
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    axios
-      .put(`${endpoint}/${id}`, {
-        name,
-        surname,
-        email,
-        expirationDate,
-      })
-      .then(() => {
-        alert("Klientas sėkmingai atnaujintas");
-        navigate("/users");
-      })
-      .catch((error) => alert(error));
+    if (!name || !surname || !email || !expirationDate) {
+      return alert("Fill in all the fields (name, surname, email, data)");
+    }
+    if (name.length < 6 || name.length > 50) {
+      return alert("Name must be between 6 and 50 characters");
+    }
+    if (surname.length < 6 || surname.length > 50) {
+      return alert("Surname must be between 6 and 50 characters");
+    }
+    if (email.length < 6 || email.length > 100) {
+      return alert("Email must be between 6 and 100 characters");
+    }
+    if (!email.includes("@")) {
+      return alert("Email must contain @");
+    }
+    if (!email.includes(".")) {
+      return alert("Email must contain .");
+    }
+    try {
+      const { data } = await axios.put(`${endpoint}/${id}`, {
+        name: name,
+        surname: surname,
+        email: email,
+        expirationDate: expirationDate,
+      });
+      console.log(data);
+      navigate("/users");
+      return alert("Klientas sėkmingai atnaujintas");
+    } catch (error) {
+      return alert(error.message);
+    }
   }
   return (
     <div>
@@ -46,8 +65,8 @@ export default function EditUsers() {
         <input
           type="text"
           required
-          minLength={1}
-          maxLength={100}
+          minLength={6}
+          maxLength={50}
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
@@ -56,8 +75,8 @@ export default function EditUsers() {
         <input
           type="text"
           required
-          minLength={1}
-          maxLength={100}
+          minLength={6}
+          maxLength={50}
           value={surname}
           onChange={(e) => setSurname(e.target.value)}
         />
@@ -66,7 +85,7 @@ export default function EditUsers() {
         <input
           type="text"
           required
-          minLength={1}
+          minLength={6}
           maxLength={100}
           value={email}
           onChange={(e) => setEmail(e.target.value)}

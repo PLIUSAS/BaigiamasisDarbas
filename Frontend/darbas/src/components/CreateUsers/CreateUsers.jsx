@@ -11,28 +11,42 @@ export default function CreateUsers() {
   const [surname, setSurname] = useState("");
   const [email, setEmail] = useState("");
   const [expirationDate, setExpirationDate] = useState("");
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    axios
-      .post(endpoint, {
-        name,
-        surname,
-        email,
-        expirationDate,
-      })
-      .then(() => {
-        alert("Klientas sėkmingai registruotas");
-        navigate("/users");
-      })
-      .catch((error) => alert(error));
     if (!name || !surname || !email || !expirationDate) {
-      alert("Užpildykite visus laukus");
+      return alert("Fill in all the fields (name, surname, email, data)");
     }
-    if (name.length > 100 || surname.length > 100 || email.length > 100) {
-      alert("Vardas arba Pavardė arba El.pastas yra per ilgas !!");
+    if (name.length < 6 || name.length > 50) {
+      return alert("Name must be between 6 and 50 characters");
     }
-    if (name.length <= 1 || surname.length <= 1 || email.length <= 1) {
-      alert("Vardas ir Pavardė, bei El.pastas yra privalomas !!");
+    if (surname.length < 6 || surname.length > 50) {
+      return alert("Surname must be between 6 and 50 characters");
+    }
+    if (email.length < 6 || email.length > 100) {
+      return alert("Email must be between 6 and 100 characters");
+    }
+    if (!email.includes("@")) {
+      return alert("Email must contain @");
+    }
+    if (!email.includes(".")) {
+      return alert("Email must contain .");
+    }
+    try {
+      const { data } = await axios.post(endpoint, {
+        name: name,
+        surname: surname,
+        email: email,
+        expirationDate: expirationDate,
+      });
+      console.log(data);
+      setName("");
+      setSurname("");
+      setEmail("");
+      setExpirationDate("");
+      navigate("/users");
+      return alert("Klientas sėkmingai registruotas");
+    } catch (error) {
+      return alert(error.message);
     }
   }
   return (
@@ -43,8 +57,8 @@ export default function CreateUsers() {
           placeholder="Vardas"
           type="text"
           required
-          minLength={1}
-          maxLength={100}
+          minLength={6}
+          maxLength={50}
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
@@ -54,8 +68,8 @@ export default function CreateUsers() {
           placeholder="Pavardė"
           type="text"
           required
-          minLength={1}
-          maxLength={100}
+          minLength={6}
+          maxLength={50}
           value={surname}
           onChange={(e) => setSurname(e.target.value)}
         />
@@ -65,7 +79,7 @@ export default function CreateUsers() {
           placeholder="Abcd@gmail.com"
           type="email"
           required
-          minLength={1}
+          minLength={6}
           maxLength={100}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
