@@ -26,10 +26,7 @@ export default function CreateUsers() {
       return alert("Email must be between 6 and 100 characters");
     }
     if (!email.includes("@")) {
-      return alert("Email must contain @");
-    }
-    if (!email.includes(".")) {
-      return alert("Email must contain .");
+      return alert("Please provide valid email with @");
     }
     try {
       const { data } = await axios.post(endpoint, {
