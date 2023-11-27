@@ -1,0 +1,68 @@
+.EditForm {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 750px;
+  height: 750px;
+  background: url("file:///C:/Users/laury/Desktop/Code%20Academy.lt%20Front-End/BaigiamasisDarbas/Frontend/darbas/src/components/Images/Logo.png")
+    no-repeat center center/cover;
+  opacity: 0.7;
+  box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+}
+.EditForm label,
+.EditForm input {
+  opacity: 1;
+  color: white;
+  font-size: 20px;
+}
+.InputGroup {
+  width: 100%;
+  margin-bottom: 10px;
+  background: transparent;
+}
+label,
+label i {
+  color: #fff;
+  opacity: 1;
+  background: transparent;
+}
+label i {
+  padding: 5px;
+}
+
+.InputGroup input {
+  width: 100%;
+  padding: 10px;
+  outline: 0;
+  border: 1px solid #fff;
+  color: #fff;
+  background: transparent;
+  font-size: 15px;
+}
+.InputDate {
+  cursor: pointer;
+}
+.EditForm button {
+  padding: 10px 0;
+  color: #fff;
+  outline: none;
+  background: transparent;
+  border: 1px solid #fff;
+  width: 100%;
+  cursor: pointer;
+}
+.EditForm button i {
+  padding: 0 5px;
+}
+.EditForm button:hover,
+.EditForm .InputGroup input:hover {
+  color: #edf0f1;
+  font-weight: bold;
+  font-size: 17px;
+}
+.EditForm button:hover {
+  background-color: #24252a;
+  color: rgba(0, 136, 169, 1);
+}

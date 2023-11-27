@@ -57,45 +57,73 @@ export default function EditUsers() {
   }
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="">Vardas</label> <br />
-        <input
-          type="text"
-          required
-          minLength={6}
-          maxLength={32}
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <br />
-        <label htmlFor="">Pavardė</label> <br />
-        <input
-          type="text"
-          required
-          minLength={6}
-          maxLength={32}
-          value={surname}
-          onChange={(e) => setSurname(e.target.value)}
-        />
-        <br />
-        <label htmlFor="">El.Pastas</label> <br />
-        <input
-          type="text"
-          required
-          minLength={6}
-          maxLength={50}
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <br />
-        <label htmlFor="">Data</label> <br />
-        <input
-          type="datetime-local"
-          value={expirationDate}
-          onChange={(e) => setExpirationDate(e.target.value)}
-        />
-        <br />
-        <button type="submit">Atnaujinti Klijantą</button>
+      <form className={style.EditForm} onSubmit={handleSubmit}>
+        <div className={style.InputGroup}>
+          <label htmlFor="">
+            <i class="fas fa-user"></i>Vardas
+          </label>
+          <br />
+          <input
+            type="text"
+            required
+            minLength={6}
+            maxLength={32}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <br />
+        </div>
+        <div className={style.InputGroup}>
+          <label htmlFor="">
+            <i class="fas fa-user"></i>Pavardė
+          </label>
+          <br />
+          <input
+            type="text"
+            required
+            minLength={6}
+            maxLength={32}
+            value={surname}
+            onChange={(e) => setSurname(e.target.value)}
+          />
+          <br />
+        </div>
+        <div className={style.InputGroup}>
+          <label htmlFor="">
+            <i class="fas fa-envelope"></i>El.Pastas
+          </label>
+          <br />
+          <input
+            type="text"
+            required
+            minLength={6}
+            maxLength={50}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <br />
+        </div>
+        <div className={style.InputGroup}>
+          <label htmlFor="">
+            <i class="fa-regular fa-calendar-days"></i>Data
+          </label>
+          <br />
+          <input
+            min="2023-11-01T08:00:"
+            max="2030-12-30T21:00"
+            placeholder="YYYY-MM-DD HH:MM"
+            type="datetime-local"
+            required
+            className={style.InputDate}
+            value={expirationDate}
+            onChange={(e) => setExpirationDate(e.target.value)}
+          />
+          <br />
+        </div>
+
+        <button type="submit">
+          Atnaujinti Klijantą<i class="fas fa-paper-plane"></i>
+        </button>
       </form>
     </div>
   );

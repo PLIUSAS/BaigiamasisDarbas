@@ -45,6 +45,9 @@ function App() {
         <Route path="/Klijantų/Redagavimas/:id" element={<EditUsers />} />
         <Route path="/Pagrindinis/Puslapis" element={<PagrindinisPuslapis />} />
       </Routes>
+      <footer>
+        <p>© 2023 Grožio Salonas. Visos teisės saugomos. ©</p>
+      </footer>
     </div>
   );
 }

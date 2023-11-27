@@ -72,3 +72,10 @@ nav {
 .HeaderButton button:hover {
   background-color: rgba(0, 136, 169, 0.8);
 }
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  color: #fff;
+}
