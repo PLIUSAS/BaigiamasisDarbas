@@ -1,5 +1,74 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:500");
+
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  display: block;
+  background-color: #24252a;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10%;
+  background-color: #24252a;
+  box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+}
+
+.logo {
+  cursor: pointer;
+  order: 3;
+  margin-left: auto;
+  width: 75px;
+}
+
+nav {
+  order: 1;
+}
+
+.nav_links a,
+.HeaderButton button {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: #edf0f1;
+  text-decoration: none;
+}
+
+.nav_links {
+  list-style: none;
+  display: flex;
+  font-size: 16px;
+}
+
+.nav_links li a {
+  padding: 0px 20px;
+}
+
+.nav_links li:nth-child(1) {
+  padding: 0 20px 0 0;
+}
+
+.nav_links li a {
+  transition: all 0.3s ease 0s;
+}
+
+.nav_links li a:hover {
+  color: #0088a9;
+}
+
+.HeaderButton button {
+  order: 2;
+  margin-left: 50px;
+  margin-right: 5px;
+  padding: 9px 25px;
+  background-color: rgba(0, 136, 169, 1);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.HeaderButton button:hover {
+  background-color: rgba(0, 136, 169, 0.8);
 }

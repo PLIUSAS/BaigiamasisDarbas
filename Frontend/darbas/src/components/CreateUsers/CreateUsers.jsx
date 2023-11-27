@@ -14,19 +14,19 @@ export default function CreateUsers() {
   async function handleSubmit(e) {
     e.preventDefault();
     if (!name || !surname || !email || !expirationDate) {
-      return alert("Fill in all the fields (name, surname, email, data)");
+      return alert("Prašome užpildyti Varda/Pavarde/El Pasta ir Data");
     }
-    if (name.length < 6 || name.length > 50) {
-      return alert("Name must be between 6 and 50 characters");
+    if (name.length < 6 || name.length > 32) {
+      return alert("Vardas turi būti tarp 6 ir 32 raidžių ilgumo");
     }
-    if (surname.length < 6 || surname.length > 50) {
-      return alert("Surname must be between 6 and 50 characters");
+    if (surname.length < 6 || surname.length > 32) {
+      return alert("Pavardė turi būti tarp 6 ir 32 raidžių ilgumo");
     }
-    if (email.length < 6 || email.length > 100) {
-      return alert("Email must be between 6 and 100 characters");
+    if (email.length < 6 || email.length > 50) {
+      return alert("El Pastas turi būti tarp 6 ir 32 raidžių ilgumo");
     }
     if (!email.includes("@")) {
-      return alert("Please provide valid email with @");
+      return alert("El.Pastas turi turėti, bent '@' simbolį");
     }
     try {
       const { data } = await axios.post(endpoint, {
@@ -40,7 +40,7 @@ export default function CreateUsers() {
       setSurname("");
       setEmail("");
       setExpirationDate("");
-      navigate("/users");
+      navigate("/Klijantų/Sarašas");
       return alert("Klientas sėkmingai registruotas");
     } catch (error) {
       return alert(error.message);
@@ -55,7 +55,7 @@ export default function CreateUsers() {
           type="text"
           required
           minLength={6}
-          maxLength={50}
+          maxLength={32}
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
@@ -66,7 +66,7 @@ export default function CreateUsers() {
           type="text"
           required
           minLength={6}
-          maxLength={50}
+          maxLength={32}
           value={surname}
           onChange={(e) => setSurname(e.target.value)}
         />
@@ -77,7 +77,7 @@ export default function CreateUsers() {
           type="email"
           required
           minLength={6}
-          maxLength={100}
+          maxLength={50}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />

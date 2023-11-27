@@ -3,52 +3,52 @@ import User from "../Models/users.js";
 export async function addNewUser(req, res) {
   const { name, surname, email, expirationDate } = req.body;
   try {
-    if (!name || !surname || !email) {
+    if (!name || !surname || !email || !expirationDate) {
       return res.json({
         success: false,
-        message: "Please provide name, surname and email",
+        message: "Prašome užpildyti Varda/Pavarde/El Pasta ir Data",
       });
     }
     if (name.length < 6) {
       return res.json({
         success: false,
-        message: "Name must be at least 6 characters",
+        message: "Vardas turi būti, bent 6 raidžių ilgumo",
       });
     }
-    if (name.length > 50) {
+    if (name.length > 32) {
       return res.json({
         success: false,
-        message: "Name must be less than 50 characters",
+        message: "Vardas turi būti neilgesnis nei 32 raidžių ilgumo",
       });
     }
     if (surname.length < 6) {
       return res.json({
         success: false,
-        message: "Surname must be at least 6 characters",
+        message: "Pavardė turi būti, bent 6 raidžių ilgumo",
       });
     }
-    if (surname.length > 50) {
+    if (surname.length > 32) {
       return res.json({
         success: false,
-        message: "Surname must be less than 50 characters",
+        message: "Pavardė turi būti neilgesnė nei 32 raidžių ilgumo",
       });
     }
     if (email.length < 6) {
       return res.json({
         success: false,
-        message: "Email must be less than 6 characters",
+        message: "El.Pastas turi būti, bent 6 raidžių ilgumo",
       });
     }
-    if (email.length > 100) {
+    if (email.length > 50) {
       return res.json({
         success: false,
-        message: "Email must be less than 100 characters",
+        message: "El.Pastas turi būti neilgesnis nei 32 raidžių ilgumo",
       });
     }
     if (!email.includes("@")) {
       return res.json({
         success: false,
-        message: "Please provide valid email with @",
+        message: "El.Pastas turi turėti, bent '@' simbolį",
       });
     }
     const user = new User({
@@ -87,10 +87,10 @@ export async function deleteUser(req, res) {
   try {
     const users = await User.findById(id);
     if (!users) {
-      return res.status(404).json({ message: "User not found" });
+      return res.status(404).json({ message: "Klijantas nerastas" });
     }
     await User.findByIdAndDelete(id);
-    res.status(204).json({ message: "User deleted" });
+    res.status(204).json({ message: "Klijantas ištrintas" });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -99,57 +99,57 @@ export async function updateUser(req, res) {
   const { id } = req.params;
   const { name, surname, email, expirationDate } = req.body;
   try {
-    if (!name || !surname || !email) {
+    if (!name || !surname || !email || !expirationDate) {
       return res.json({
         success: false,
-        message: "Please provide name, surname and email",
+        message: "Prašome užpildyti Varda/Pavarde/El Pasta ir Data",
       });
     }
     if (name.length < 6) {
       return res.json({
         success: false,
-        message: "Name must be at least 6 characters",
+        message: "Vardas turi būti, bent 6 raidžių ilgumo",
       });
     }
-    if (name.length > 50) {
+    if (name.length > 32) {
       return res.json({
         success: false,
-        message: "Name must be less than 50 characters",
+        message: "Vardas turi būti neilgesnis nei 32 raidžių ilgumo",
       });
     }
     if (surname.length < 6) {
       return res.json({
         success: false,
-        message: "Surname must be at least 6 characters",
+        message: "Pavardė turi būti, bent 6 raidžių ilgumo",
       });
     }
-    if (surname.length > 50) {
+    if (surname.length > 32) {
       return res.json({
         success: false,
-        message: "Surname must be less than 50 characters",
+        message: "Pavardė turi būti neilgesnė nei 32 raidžių ilgumo",
       });
     }
     if (email.length < 6) {
       return res.json({
         success: false,
-        message: "Email must be less than 6 characters",
+        message: "El.Pastas turi būti, bent 6 raidžių ilgumo",
       });
     }
-    if (email.length > 100) {
+    if (email.length > 50) {
       return res.json({
         success: false,
-        message: "Email must be less than 100 characters",
+        message: "El.Pastas turi būti neilgesnis nei 32 raidžių ilgumo",
       });
     }
     if (!email.includes("@")) {
       return res.json({
         success: false,
-        message: "Please provide valid email with @",
+        message: "El.Pastas turi turėti, bent '@' simbolį",
       });
     }
     const user = await User.findById(id);
     if (!user) {
-      return res.status(404).json({ message: "User not found" });
+      return res.status(404).json({ message: "Klijantas nerastas" });
     }
     user.name = name;
     user.surname = surname;

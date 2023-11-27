@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import UsersList from "./components/UsersList/UsersList";
 import EditUsers from "./components/EditUsers/EditUsers";
 import CreateUsers from "./components/CreateUsers/CreateUsers";
+import Logo from "./Logo.png";
+import PagrindinisPuslapis from "./components/PagrindinisPuslapis/PagrindinisPuslapis";
 
 function App() {
   const navigate = useNavigate();
@@ -11,28 +13,37 @@ function App() {
   return (
     <div>
       <header>
+        <img className={style.logo} src={Logo} alt="Grožio Salonas" />
         <nav>
-          <a
-            href=""
-            onClick={() => navigate("/Pagrindinis Grožio Salono Puslapis")}
-          >
-            Pagrindinis Puslapis
-          </a>
-          <a href="" onClick={() => navigate("/Apie Mus")}>
-            Apie Mus
-          </a>
-          <a href="" onClick={() => navigate("/users")}>
-            Užsiregistravusių Klijantų sąrašas
-          </a>
-          <a href="" onClick={() => navigate("/users/register")}>
-            Registruoti Klijantą
-          </a>
+          <ul className={style.nav_links}>
+            <li>
+              <a
+                href="/Pagrindinis/Puslapis"
+                onClick={() => navigate("/Pagrindinis/Puslapis")}
+              >
+                Pagrindinis Puslapis
+              </a>
+            </li>
+            <li>
+              <a href="" onClick={() => navigate("/Klijantų/Sarašas")}>
+                Klijantų sąrašas
+              </a>
+            </li>
+          </ul>
         </nav>
+        <a
+          href=""
+          className={style.HeaderButton}
+          onClick={() => navigate("/Klijantų/Registracija")}
+        >
+          <button>Registruoti Klijantą</button>
+        </a>
       </header>
       <Routes>
-        <Route path="/users" element={<UsersList />} />
-        <Route path="/users/register" element={<CreateUsers />} />
-        <Route path="/users/edit/:id" element={<EditUsers />} />
+        <Route path="/Klijantų/Sarašas" element={<UsersList />} />
+        <Route path="/Klijantų/Registracija" element={<CreateUsers />} />
+        <Route path="/Klijantų/Redagavimas/:id" element={<EditUsers />} />
+        <Route path="/Pagrindinis/Puslapis" element={<PagrindinisPuslapis />} />
       </Routes>
     </div>
   );

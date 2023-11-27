@@ -4,19 +4,19 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true,
     minLength: 6,
-    maxLength: 50,
+    maxLength: 32,
   },
   surname: {
     type: String,
     required: true,
     minLength: 6,
-    maxLength: 50,
+    maxLength: 32,
   },
   email: {
     type: String,
     required: true,
     minLength: 6,
-    maxLength: 100,
+    maxLength: 50,
   },
   expirationDate: {
     type: Date,

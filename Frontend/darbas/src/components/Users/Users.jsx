@@ -15,7 +15,7 @@ export default function Users({ user, setUsers }) {
       .catch((error) => alert(error));
   }
   function handleUpdate() {
-    navigate(`/users/edit/${user._id}`);
+    navigate(`/Klijantų/Redagavimas/${user._id}`);
   }
   return (
     <tr>
