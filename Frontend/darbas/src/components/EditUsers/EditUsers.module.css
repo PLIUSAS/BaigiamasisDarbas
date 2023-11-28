@@ -1,4 +1,16 @@
+.container {
+  background-image: url("file:///C:/Users/laury/Desktop/Code%20Academy.lt%20Front-End/BaigiamasisDarbas/Frontend/darbas/src/components/Images/Logo.png");
+  background-size: 500px;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+  border: 1px solid rgba(57, 63, 72, 0.3);
+  padding: 1rem;
+}
 .EditForm {
+  border: 1px solid rgba(57, 63, 72, 0.3);
+  padding: 15px;
+  border-radius: 5%;
   margin: auto;
   display: flex;
   align-items: center;
@@ -6,9 +18,7 @@
   flex-direction: column;
   width: 750px;
   height: 750px;
-  background: url("file:///C:/Users/laury/Desktop/Code%20Academy.lt%20Front-End/BaigiamasisDarbas/Frontend/darbas/src/components/Images/Logo.png")
-    no-repeat center center/cover;
-  opacity: 0.7;
+  background: transparent;
   box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
 }
 .EditForm label,
@@ -41,9 +51,6 @@ label i {
   background: transparent;
   font-size: 15px;
 }
-.InputDate {
-  cursor: pointer;
-}
 .EditForm button {
   padding: 10px 0;
   color: #fff;
@@ -58,11 +65,8 @@ label i {
 }
 .EditForm button:hover,
 .EditForm .InputGroup input:hover {
-  color: #edf0f1;
+  color: rgba(0, 136, 169, 1);
   font-weight: bold;
   font-size: 17px;
-}
-.EditForm button:hover {
-  background-color: #24252a;
-  color: rgba(0, 136, 169, 1);
+  cursor: pointer;
 }

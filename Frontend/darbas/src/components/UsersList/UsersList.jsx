@@ -9,18 +9,20 @@ export default function UsersList() {
   useEffect(() => {
     axios
       .get(endpoint)
-      .then(({ data }) => setUsers(data))
+      .then(({ data }) => {
+        setUsers(data);
+      })
       .catch((error) => alert(error));
   }, []);
 
   return (
-    <div>
+    <div className={style.container}>
       <table>
         <thead>
           <th>Klijanto Vardas</th>
           <th>Klijanto Pavarde</th>
-          <th>Klijanti el. paštas</th>
-          <th>Registracijos data</th>
+          <th>Klijanti El.Paštas</th>
+          <th>Registracijos diena</th>
           <th>Atnaujinti</th>
           <th>Istrinti</th>
         </thead>

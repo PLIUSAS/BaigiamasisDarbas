@@ -1,0 +1,21 @@
+.container td button {
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 9px 25px;
+  background-color: rgba(0, 136, 169, 1);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+.container td:hover,
+.container .update:hover,
+.container .delete:hover {
+  background: transparent;
+}
+.container .update button:hover {
+  background-color: rgba(20, 169, 0, 0.8);
+}
+.container .delete button:hover {
+  background-color: rgba(169, 0, 0, 0.8);
+}

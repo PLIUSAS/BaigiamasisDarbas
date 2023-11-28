@@ -47,7 +47,7 @@ export default function CreateUsers() {
     }
   }
   return (
-    <div>
+    <div className={style.container}>
       <form className={style.CreateForm} onSubmit={handleSubmit}>
         <div className={style.InputGroup}>
           <label htmlFor="">

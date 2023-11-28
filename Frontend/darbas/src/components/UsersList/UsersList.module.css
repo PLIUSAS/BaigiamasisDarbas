@@ -1,0 +1,33 @@
+.container {
+  margin: 2rem auto;
+  align-items: center;
+  justify-content: center;
+  width: 1000px;
+  height: 700px;
+}
+table {
+  width: 1000px;
+  border-collapse: collapse;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(57, 63, 72, 0.3);
+}
+th,
+td {
+  padding: 15px;
+  background-color: rgba(57, 63, 72, 0.3);
+  color: #fff;
+}
+th {
+  text-align: center;
+}
+td {
+  font-weight: bold;
+}
+.container table thead th {
+  background-color: rgba(0, 136, 169, 1);
+}
+.container tbody tr:hover {
+  cursor: pointer;
+  background-color: rgba(73, 73, 73, 0.3);
+}

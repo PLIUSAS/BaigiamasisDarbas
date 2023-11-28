@@ -21,7 +21,7 @@ export default function Users({ user, setUsers }) {
     navigate(`/Klijantų/Redagavimas/${user._id}`);
   }
   return (
-    <tr>
+    <tr className={style.container}>
       <td>{user.name}</td>
       <td>{user.surname}</td>
       <td>{user.email}</td>
@@ -33,10 +33,10 @@ export default function Users({ user, setUsers }) {
           minute: "2-digit",
         })}
       </td>
-      <td>
+      <td className={style.update}>
         <button onClick={handleUpdate}>Atnaujinti</button>
       </td>
-      <td>
+      <td className={style.delete}>
         <button onClick={handleDelete}>Istrinti</button>
       </td>
     </tr>

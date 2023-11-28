@@ -56,7 +56,7 @@ export default function EditUsers() {
     }
   }
   return (
-    <div>
+    <div className={style.container}>
       <form className={style.EditForm} onSubmit={handleSubmit}>
         <div className={style.InputGroup}>
           <label htmlFor="">
