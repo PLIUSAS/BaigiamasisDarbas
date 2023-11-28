@@ -49,6 +49,7 @@ export default function CreateUsers() {
   return (
     <div className={style.container}>
       <form className={style.CreateForm} onSubmit={handleSubmit}>
+        <h1>Registruoti Klijantą </h1>
         <div className={style.InputGroup}>
           <label htmlFor="">
             <i class="fas fa-user"></i>Vardas

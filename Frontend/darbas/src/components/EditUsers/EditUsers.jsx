@@ -58,6 +58,7 @@ export default function EditUsers() {
   return (
     <div className={style.container}>
       <form className={style.EditForm} onSubmit={handleSubmit}>
+        <h1>Redaguoti Klijantą</h1>
         <div className={style.InputGroup}>
           <label htmlFor="">
             <i class="fas fa-user"></i>Vardas

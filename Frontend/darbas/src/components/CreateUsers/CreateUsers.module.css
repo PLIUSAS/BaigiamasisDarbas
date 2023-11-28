@@ -1,6 +1,6 @@
 .container {
   background-image: url("file:///C:/Users/laury/Desktop/Code%20Academy.lt%20Front-End/BaigiamasisDarbas/Frontend/darbas/src/components/Images/Logo.png");
-  background-size: 500px;
+  background-size: 400px;
   background-repeat: no-repeat;
   background-position: center;
   box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
@@ -16,10 +16,15 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 750px;
-  height: 750px;
+  width: 550px;
+  height: 550px;
   background: transparent;
   box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+  margin-top: 3rem;
+  margin-bottom: 10rem;
+}
+.CreateForm h1 {
+  color: #fff;
 }
 .CreateForm label,
 .CreateForm input {
