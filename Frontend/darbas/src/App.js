@@ -13,7 +13,12 @@ function App() {
   return (
     <div>
       <header>
-        <img className={style.logo} src={Logo} alt="Grožio Salonas" />
+        <img
+          onClick={() => navigate("/Pagrindinis/Puslapis")}
+          className={style.logo}
+          src={Logo}
+          alt="Grožio Salono Logotipas"
+        />
         <nav>
           <ul className={style.nav_links}>
             <li>
@@ -26,7 +31,7 @@ function App() {
             </li>
             <li>
               <a href="" onClick={() => navigate("/Klijantų/Sarašas")}>
-                Klijantų sąrašas
+                Klijantų Sąrašas
               </a>
             </li>
           </ul>

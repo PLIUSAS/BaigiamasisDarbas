@@ -21,10 +21,11 @@
   background: transparent;
   box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
   margin-top: 3rem;
-  margin-bottom: 10rem;
+  margin-bottom: 7rem;
 }
 .EditForm h1 {
   color: #fff;
+  background: transparent;
 }
 .EditForm label,
 .EditForm input {
@@ -46,7 +47,6 @@ label i {
 label i {
   padding: 5px;
 }
-
 .InputGroup input {
   width: 100%;
   padding: 10px;
@@ -67,6 +67,7 @@ label i {
 }
 .EditForm button i {
   padding: 0 5px;
+  background: transparent;
 }
 .EditForm button:hover,
 .EditForm .InputGroup input:hover {

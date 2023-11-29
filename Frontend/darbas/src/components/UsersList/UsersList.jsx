@@ -17,12 +17,13 @@ export default function UsersList() {
 
   return (
     <div className={style.container}>
+      <h1>Klijantų Sąrašas</h1>
       <table>
         <thead>
-          <th>Klijanto Vardas</th>
-          <th>Klijanto Pavarde</th>
-          <th>Klijanti El.Paštas</th>
-          <th>Registracijos diena</th>
+          <th>Vardas</th>
+          <th>Pavardė</th>
+          <th>El.Paštas</th>
+          <th>Registracijos data:</th>
           <th>Atnaujinti</th>
           <th>Istrinti</th>
         </thead>

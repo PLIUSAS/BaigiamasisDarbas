@@ -1,7 +1,7 @@
 .container td button {
   margin-left: 5px;
   margin-right: 5px;
-  padding: 9px 25px;
+  padding: 5px 25px;
   background-color: rgba(0, 136, 169, 1);
   border: none;
   border-radius: 50px;
@@ -15,7 +15,9 @@
 }
 .container .update button:hover {
   background-color: rgba(20, 169, 0, 0.8);
+  font-size: 15px;
 }
 .container .delete button:hover {
   background-color: rgba(169, 0, 0, 0.8);
+  font-size: 15px;
 }
