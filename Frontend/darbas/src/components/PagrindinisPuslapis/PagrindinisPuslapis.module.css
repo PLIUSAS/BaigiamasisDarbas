@@ -44,11 +44,23 @@ main .image {
 main .galery h1,
 main .about h1 {
   color: white;
+  text-transform: uppercase;
+  font-size: 2rem;
 }
 main .about h1 span:nth-child(4) {
   padding-right: 15px;
 }
 main .galery h1 span,
 main .about h1 span {
+  -webkit-text-stroke: 1px white;
+  color: transparent;
   padding: 0 3px;
+}
+main .galery h1 span:hover,
+main .about h1 span:hover {
+  color: white;
+}
+main .galery h1 span:has(~ span:hover),
+main .about h1 span:has(~ span:hover) {
+  color: white;
 }
