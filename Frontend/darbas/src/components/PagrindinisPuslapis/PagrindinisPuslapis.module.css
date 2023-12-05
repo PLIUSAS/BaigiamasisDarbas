@@ -41,3 +41,14 @@ main .image {
   border-radius: 50%;
   background-image: url("https://classiclinedecor.com/wp-content/uploads/2021/11/Balmain-plauku-grozio-salonas-Paryziuje3-e1624259448672.jpeg");
 }
+main .galery h1,
+main .about h1 {
+  color: white;
+}
+main .about h1 span:nth-child(4) {
+  padding-right: 15px;
+}
+main .galery h1 span,
+main .about h1 span {
+  padding: 0 3px;
+}

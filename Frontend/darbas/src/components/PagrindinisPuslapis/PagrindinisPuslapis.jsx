@@ -6,7 +6,15 @@ export default function PagrindinisPuslapis() {
   return (
     <main>
       <div className={style.about}>
-        <h1>Apie Mus</h1>
+        <h1>
+          <span>A</span>
+          <span>P</span>
+          <span>I</span>
+          <span>E</span>
+          <span>M</span>
+          <span>U</span>
+          <span>S</span>
+        </h1>
 
         <p>
           Grožio salonas – vieta, glaudžiai siejama su estetikos pojūčiu. Čia
@@ -19,7 +27,16 @@ export default function PagrindinisPuslapis() {
       </div>
       <div className={style.image}></div>
       <div className={style.galery}>
-        <h1>Galerija</h1>
+        <h1>
+          <span>G</span>
+          <span>A</span>
+          <span>L</span>
+          <span>E</span>
+          <span>R</span>
+          <span>I</span>
+          <span>J</span>
+          <span>A</span>
+        </h1>
         <img
           src="https://classiclinedecor.com/wp-content/uploads/2021/11/Balmain-plauku-grozio-salonas-Paryziuje4-e1624259524912.jpeg"
           alt=""
